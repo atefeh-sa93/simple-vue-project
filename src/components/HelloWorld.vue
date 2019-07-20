@@ -4,14 +4,14 @@
       <input type="search" v-model="search" placeholder="search" class="input-form">
     </div>
     <template v-if="filteredBlog.length">
-      <div >
-        <div class="card" id="blog" v-for="blog in filteredBlog">
-          <img :src="blog.src">
-          <span>
+      <div class="row" id="blog" v-for="blog in filteredBlog">
+          <div class="col-md-6">
+            <img :src="blog.src">
+          </div>
+          <div class="col-md-6">
             <h3>{{ blog.title}}</h3>
             <p>{{ blog.content}}</p>
-          </span>
-        </div>
+          </div>
       </div>
     </template>
     <template v-else>
@@ -138,22 +138,23 @@ export default {
     border-radius: 20px;
     margin:10px;
     padding: 20px;
+    box-shadow: 2px 5px 5px #7688A9;
   }
   #blog{
     margin: 10px;
     padding: 10px;
     background: #7688A9;
   }
-  span{
-    margin:10px;
-    font-size: 20px;
-    text-align: justify;
-  }
-  span h3{
+  h3{
     font-weight: 700;
+    margin: 10px;
+  }
+  p{
+    font-size: 15px;
   }
   img{
-    width: 300px;
+    width:500px;
+    height:500px;
     border: 1px solid #152C55;
     border-radius: 10px;
   }
